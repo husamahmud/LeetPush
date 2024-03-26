@@ -24,7 +24,8 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
           'Rust': '.rs',
           'Scala': '.scala',
           'Swift': '.swift',
-          'TypeScript': '.ts'
+          'TypeScript': '.ts',
+          'MySQL':'sql'
         };
 
         const localStorageExs = {
@@ -46,7 +47,8 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
           'Rust': 'rust',
           'Scala': 'scala',
           'Swift': 'swift',
-          'TypeScript': 'typeScript'
+          'TypeScript': 'typeScript',
+          'MySQL':'mysql'
         };
 
         probNameElement = document.querySelector(
@@ -73,13 +75,19 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
           fileName = `${probName}${fileEx}`;
           await sessionStorage.setItem('fileName', fileName);
 
-          const [memory, runtime] = document.querySelectorAll('div.flex.items-center.justify-between.gap-2 > div > div.rounded-sd.flex.min-w-\\[275px\\].flex-1.cursor-pointer.flex-col.px-4.py-3.text-xs > div:nth-child(3) > span.font-semibold');
-          if (runtime && memory) {
+          const runtime =  [...document.querySelectorAll('div.flex.items-center.justify-between.gap-2 > div > div.rounded-sd.flex.min-w-\\[275px\\].flex-1.cursor-pointer.flex-col.px-4.py-3.text-xs > div:nth-child(3) > span.font-semibold')][0]??'NULL';
+          const memory =  [...document.querySelectorAll('div.flex.items-center.justify-between.gap-2 > div > div.rounded-sd.flex.min-w-\\[275px\\].flex-1.cursor-pointer.flex-col.px-4.py-3.text-xs > div:nth-child(3) > span.font-semibold')][1]??'NULL';
+          
+          commitMsg = `[${probNum}]` ;
+          if (runtime ) {
             runtimeText = runtime.innerText;
+            commitMsg +=`[Time Beats: ${runtimeText}] `;
+          }if ( memory) {
             memoryText = memory.innerText;
+            commitMsg+=`[Memory Beats: ${memoryText}]`;
           }
 
-          commitMsg = `[${probNum}] [Time Beats: ${runtimeText}] [Memory Beats: ${memoryText}] - LeetPush`;
+          commitMsg = ` - LeetPush`;
           await sessionStorage.setItem('commitMsg', commitMsg);
         }
 
