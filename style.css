@@ -1,22 +1,28 @@
 /** LeetPush Push Button **/
-#leetpush-div, #leetpush-div-edit, #leetpush-div-CodeEditor, #leetpush-div-edit-CodeEditor {
+#leetpush-div,
+#leetpush-div-edit,
+#leetpush-div-CodeEditor,
+#leetpush-div-edit-CodeEditor {
   display: flex;
   align-items: center;
   text-align: center;
   margin-left: 0.5rem;
   border-radius: 0.5rem;
-	font-size: 13px;
+  font-size: 13px;
 }
 
-#leetpush-div, #leetpush-div-CodeEditor {
+#leetpush-div,
+#leetpush-div-CodeEditor {
   background-color: #e7a41e;
 }
 
-#leetpush-div:hover, #leetpush-div-CodeEditor:hover {
+#leetpush-div:hover,
+#leetpush-div-CodeEditor:hover {
   background-color: #e2b65c;
 }
 
-#leetpush-btn, #leetpush-btn-CodeEditor {
+#leetpush-btn,
+#leetpush-btn-CodeEditor {
   line-height: 18px;
   font-weight: 600;
   padding-inline: 1.25rem;
@@ -27,15 +33,18 @@
 }
 
 /** LeetPush Edit Button **/
-#leetpush-div-edit, #leetpush-div-edit-CodeEditor {
+#leetpush-div-edit,
+#leetpush-div-edit-CodeEditor {
   background-color: rgb(26 26 26);
 }
 
-#leetpush-div-edit:hover, #leetpush-div-edit-CodeEditor:hover {
+#leetpush-div-edit:hover,
+#leetpush-div-edit-CodeEditor:hover {
   background-color: rgba(26, 26, 26, 0.8);
 }
 
-#leetpush-btn-edit, #leetpush-btn-edit-CodeEditor {
+#leetpush-btn-edit,
+#leetpush-btn-edit-CodeEditor {
   line-height: 18px;
   font-weight: 600;
   font-size: 13px;
@@ -57,8 +66,8 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.6);
+  color: white;
 }
-
 
 #lp-container {
   width: 350px;
@@ -102,11 +111,10 @@
     .lp-div {
       display: flex;
       flex-direction: column;
-      gap: .5rem;
-
+      gap: 0.5rem;
     }
 
-    input[type='text'] {
+    input[type="text"] {
       width: 100%;
       border-radius: 0.2rem;
       padding-inline: 0.5rem;
